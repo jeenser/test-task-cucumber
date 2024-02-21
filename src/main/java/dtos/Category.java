@@ -12,7 +12,7 @@ import java.util.Date;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Category{
-    public int id;
+    public Integer id;
     public String name;
     public String image;
     public Date creationAt;

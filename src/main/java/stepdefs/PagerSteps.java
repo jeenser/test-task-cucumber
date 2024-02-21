@@ -4,7 +4,7 @@ import dtos.Product;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import utils.Client;
+import utils.ProductClientService;
 
 import java.util.Collections;
 import java.util.List;
@@ -20,7 +20,7 @@ public class PagerSteps {
 
     @When("User sends request")
     public void userSendsRequest() {
-        this.products = Client.getAllProducts();
+        this.products = ProductClientService.getAllProducts();
     }
 
     @Then("Correct amount of data is returned")
@@ -36,7 +36,7 @@ public class PagerSteps {
 
     @When("User sends request with params")
     public void userSendsRequestWithParams() {
-        this.products = Client.getProductsWithOffsetAndLimit(this.offset, this.limit);
+        this.products = ProductClientService.getProductsWithOffsetAndLimit(this.offset, this.limit);
     }
 
     @Then("Correct amount of data is returned according to params")
