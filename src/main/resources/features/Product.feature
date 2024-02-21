@@ -4,8 +4,8 @@ Feature: Testing product
 
   Scenario: Testing creation of product
     Given correct Product data consisting of title "New Product" , price 10, description "A description", category 1. images
-      |"https://placeimg.com/640/480/any"|
-      |"https://placeimg.com/720/480/any"|
+      |https://placeimg.com/640/480/any|
+      |https://placeimg.com/720/480/any|
     When User sends request to create Product
     Then Success response of Product creation is received
     And Product is shown in list of Products

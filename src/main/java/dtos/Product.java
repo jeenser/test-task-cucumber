@@ -13,12 +13,13 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Product {
-    public int id;
+    public Integer id;
     public String title;
-    public int price;
+    public Integer price;
     public String description;
     public List<String> images;
     public Date creationAt;
     public Date updatedAt;
     public Category category;
+    public Integer categoryId;
 }

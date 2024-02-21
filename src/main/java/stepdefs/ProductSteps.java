@@ -5,6 +5,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import utils.Client;
 
 import java.util.List;
 
@@ -23,11 +24,13 @@ public class ProductSteps {
                 .price(price)
                 .description(description)
                 .images(images)
+                .categoryId(1)
                 .build();
     }
 
     @When("User sends request to create Product")
     public void userSendsRequestToCreateProduct() {
+        Client.postCreateProduct(this.product);
     }
 
     @Then("Success response of Product creation is received")

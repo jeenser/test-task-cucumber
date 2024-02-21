@@ -42,4 +42,17 @@ public class Client {
         log.info(response.body());
         return objectMapper.readValue(response.body(), new TypeReference<List<Product>>(){});
     }
+
+    @SneakyThrows
+    public static Product postCreateProduct(Product product)
+    {
+        var body = objectMapper.writeValueAsString(product);
+        var request = HttpRequest.newBuilder()
+                .uri(URI.create(uri))
+                .POST(HttpRequest.BodyPublishers.ofString(body))
+                .build();
+        var response = httpClient.send(request, HttpResponse.BodyHandlers.ofString());
+        log.info(response.body());
+        return objectMapper.readValue(response.body(), new TypeReference<Product>(){});
+    }
 }
